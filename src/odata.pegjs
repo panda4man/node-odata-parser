@@ -285,7 +285,7 @@ filterExpr                  =
                                 return filterExprHelper(left, right);
                               }
 
-booleanFunctions2Args       = "substringof" / "endswith" / "startswith" / "IsOf"
+booleanFunctions2Args       = "contains" / "substringof" / "endswith" / "startswith" / "IsOf"
 
 booleanFunc                 =  f:booleanFunctions2Args "(" arg0:part "," WSP? arg1:part ")" {
                                     return {
@@ -304,7 +304,7 @@ booleanFunc                 =  f:booleanFunctions2Args "(" arg0:part "," WSP? ar
 
 otherFunctions1Arg          = "tolower" / "toupper" / "trim" / "length" / "year" /
                               "month" / "day" / "hour" / "minute" / "second" /
-                              "round" / "floor" / "ceiling"
+                              "round" / "floor" / "ceiling" / "date" / "time"
 
 otherFunc1                  = f:otherFunctions1Arg "(" arg0:part ")" {
                                   return {
